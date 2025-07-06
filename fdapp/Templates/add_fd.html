@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+  <h2 class="text-success mb-4">➕ Add New Fixed Deposit</h2>
+
+  <form method="post" class="row g-3">
+    {% csrf_token %}
+    <div class="col-md-6">{{ form.bank_name.label_tag }} {{ form.bank_name }}</div>
+    <div class="col-md-6">{{ form.customer_id.label_tag }} {{ form.customer_id }}</div>
+    <div class="col-md-6">{{ form.fd_number.label_tag }} {{ form.fd_number }}</div>
+    <div class="col-md-6">{{ form.principal.label_tag }} {{ form.principal }}</div>
+    <div class="col-md-6">{{ form.rate.label_tag }} {{ form.rate }}</div>
+    <div class="col-md-6">{{ form.financial_year.label_tag }} {{ form.financial_year }}</div>
+    <div class="col-md-6">{{ form.start_date.label_tag }} {{ form.start_date }}</div>
+    <div class="col-md-6">{{ form.maturity_date.label_tag }} {{ form.maturity_date }}</div>
+    <div class="col-md-6">{{ form.accumulation.label_tag }} {{ form.accumulation }}</div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">✅ Save FD</button>
+      <a href="{% url 'home' %}" class="btn btn-secondary">↩ Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

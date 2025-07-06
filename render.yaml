@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: fd-calculator
+    env: python
+    buildCommand: ./build.sh
+    startCommand: gunicorn fd_project.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: fd_project.settings

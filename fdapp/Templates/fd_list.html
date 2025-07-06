@@ -1,0 +1,29 @@
+<h3 class="mb-3">Saved Fixed Deposits</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>FD Name</th>
+      <th>Principal</th>
+      <th>Rate</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Interest</th>
+      <th>TDS</th>
+      <th>Closing</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for fd in fds %}
+    <tr>
+      <td>{{ fd.fd_name }}</td>
+      <td>{{ fd.principal }}</td>
+      <td>{{ fd.rate }}</td>
+      <td>{{ fd.start_date }}</td>
+      <td>{{ fd.end_date }}</td>
+      <td>{{ fd.interest }}</td>
+      <td>{{ fd.tds }}</td>
+      <td>{{ fd.closing_balance }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

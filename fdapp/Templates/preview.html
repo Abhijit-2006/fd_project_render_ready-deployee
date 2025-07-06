@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container mt-4">
+    <h4 class="mb-3">📂 Preview: {{ filename }}</h4>
+
+    {% if data %}
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-dark text-center">
+            <tr>
+              <th>Customer ID</th>
+              <th>FD Number</th>
+              <th>Bank Name</th>
+              <th>Principal/Opening</th>
+              <th>Interest Rate</th>
+              <th>Start Date</th>
+              <th>Maturity Date</th>
+              <th>Accumulation</th>
+              <th>Interest Type</th>
+              <th>Total Interest</th>
+              <th>TDS</th>
+              <th>Closing Balance</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            {% for row in data %}
+              <tr>
+                <td>{{ row.0 }}</td>
+                <td>{{ row.1 }}</td>
+                <td>{{ row.2 }}</td>
+                <td>₹{{ row.3 }}</td>
+                <td>{{ row.4 }}</td>
+                <td>{{ row.5 }}</td>
+                <td>{{ row.6 }}</td>
+                <td>{{ row.7 }}</td>
+                <td>{{ row.8 }}</td>
+                <td>₹{{ row.9 }}</td>
+                <td>₹{{ row.10 }}</td>
+                <td>₹{{ row.11 }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <div class="alert alert-warning">No data found.</div>
+    {% endif %}
+  </div>
+{% endblock %}
