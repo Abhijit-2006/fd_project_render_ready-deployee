@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for fd_project project.
 
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'fd_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'fdapp', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
